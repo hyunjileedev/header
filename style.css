@@ -1,0 +1,153 @@
+/* Global */
+:root {
+  --color-primary: #845ec2;
+  --color-accent: #00c9a7;
+  --color-text: #ffffff;
+}
+
+/* Universal tags */
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+}
+
+/* Header container */
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1.5em;
+  background-color: var(--color-primary);
+}
+
+/* Logo */
+.header__logo {
+  font-size: 1.5rem;
+}
+
+.fa-bug {
+  color: var(--color-accent);
+}
+
+/* Menu */
+.header__menu {
+  display: flex;
+}
+
+.menu__item {
+  padding: 0.5em 0.75em;
+  margin: 0 0.25em;
+  font-size: 1.25rem;
+}
+
+.menu__item:hover {
+  background-color: var(--color-accent);
+  border-radius: 4px;
+}
+
+.menu__item > a {
+  display: block;
+}
+
+/* Form */
+.form__input {
+  font-size: 1.125rem;
+  color: var(--color-text);
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px var(--color-text);
+  outline-color: var(--color-accent);
+}
+
+.form__btn {
+  font-size: 1.125rem;
+  color: var(--color-text);
+}
+
+.form__btn:hover {
+  color: var(--color-accent);
+}
+
+/* Toggle button */
+.header__toggle {
+  display: none;
+  position: absolute;
+  top: 0.75em;
+  right: 0.5em;
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}
+
+/* For small screen */
+@media screen and (max-width: 48rem) {
+  /* Header container */
+  .header {
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  /* Logo */
+  .header__logo {
+    align-self: flex-start;
+  }
+
+  /* Menu */
+  .header__menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .menu__item {
+    margin: 0.25em 0 0;
+  }
+
+  /* Form */
+  .header__form {
+    display: none;
+    text-align: center;
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  .form__input {
+    width: 70%;
+  }
+
+  /* When toggle button is clicked */
+  .header__menu--active {
+    display: flex;
+  }
+
+  .header__form--active {
+    display: block;
+  }
+
+  /* Toggle button */
+  .header__toggle {
+    display: block;
+  }
+}
